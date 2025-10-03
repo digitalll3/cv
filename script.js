@@ -94,37 +94,7 @@ function animateLanguageBars() {
     });
 }
 
-// Image Upload Functionality
-function initImageUpload() {
-    const profileImageContainer = document.querySelector('.profile-image-container');
-    const profileImage = document.getElementById('profileImage');
-    
-    // Create hidden file input
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = 'image/*';
-    fileInput.style.display = 'none';
-    document.body.appendChild(fileInput);
-    
-    profileImageContainer.addEventListener('click', function() {
-        fileInput.click();
-    });
-    
-    fileInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                profileImage.src = e.target.result;
-                profileImage.style.opacity = '0';
-                setTimeout(() => {
-                    profileImage.style.opacity = '1';
-                }, 100);
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-}
+
 
 // Smooth Scrolling for Internal Links
 function initSmoothScrolling() {
